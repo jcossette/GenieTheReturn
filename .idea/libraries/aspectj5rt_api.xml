@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="aspectj5rt-api">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://C:/aspectj1.8/doc/aspectj5rt-api" />
+      <root url="file://C:/aspectj1.8/doc/runtime-api" />
+      <root url="file://C:/aspectj1.8/doc/weaver-api" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://C:/aspectj1.8/doc/examples" />
+      <root url="file://C:/aspectj1.8/doc/examples/ltw" />
+    </SOURCES>
+  </library>
+</component>
