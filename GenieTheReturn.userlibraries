@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="aspectjrt">
+    <archive path="C:/aspectj1.8/lib/aspectjrt.jar" />
+  </library>
+</eclipse-userlibraries>
+
