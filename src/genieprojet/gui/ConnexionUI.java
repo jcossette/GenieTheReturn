@@ -143,6 +143,8 @@ public class ConnexionUI extends javax.swing.JFrame {
         
         if (user != null){
         	Session.getInstance().setUser(user);
+        	JOptionPane.showMessageDialog(null, "Authentification completee, vous pouvez maintenant naviguer dans le programme.", "Authentification reussie",
+                    JOptionPane.INFORMATION_MESSAGE);
         	this.dispose();
         } else {
         	JOptionPane.showMessageDialog(null, "Identifiant ou mot de passe invalide.", "Erreur",
