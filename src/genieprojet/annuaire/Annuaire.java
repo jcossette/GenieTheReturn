@@ -39,8 +39,8 @@ public class Annuaire implements Serializable {
         return instance;
     }
 
-    public void ajouterUtilisateur(String niveau, String nom, String prenom) {
-        myUsers.add(fabriqueUtilisateur.creerUtilisateur(niveau, nom, prenom, userIdTicker++));
+    public void ajouterUtilisateur(String niveau, String nom, String prenom, String password) {
+        myUsers.add(fabriqueUtilisateur.creerUtilisateur(niveau, nom, prenom, password, userIdTicker++));
     }
 
     public void ajouterClient(String type, String nom, String nom2, Adresse adresse, String codePostal, String numTel, String age) {
@@ -51,7 +51,7 @@ public class Annuaire implements Serializable {
         if (!toSave.getNiveauString().equals(newNiveau)){
             retirerUtilisateur(toSave.getID());
             
-            ajouterUtilisateur(newNiveau, newNom, newPrenom);
+            ajouterUtilisateur(newNiveau, newNom, newPrenom, toSave.getPassword());
         } else {
             Utilisateur user = getUser(toSave.getID());
             user.setNom(newNom);
@@ -151,5 +151,18 @@ public class Annuaire implements Serializable {
             }
         }
         return results;
+    }
+    
+    public Utilisateur verifyUser(String userID, String password){
+    	for (Utilisateur u : myUsers){
+    		if (u.getID().equals(userID)){
+    			if (u.getPassword().equals(password)){
+    				return u;
+    			} else {
+    				return null;
+    			}
+    		}
+    	}
+    	return null;
     }
 }

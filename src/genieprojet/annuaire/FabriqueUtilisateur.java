@@ -20,7 +20,7 @@ public class FabriqueUtilisateur implements Serializable{
         return instance;
     }
 
-    public Utilisateur creerUtilisateur(String niveau, String nom, String prenom, int userIdTicker) {
+    public Utilisateur creerUtilisateur(String niveau, String nom, String prenom, String password, int userIdTicker) {
         Utilisateur newUtilisateur;
 
         switch (niveau) {
@@ -36,6 +36,7 @@ public class FabriqueUtilisateur implements Serializable{
         newUtilisateur.setID(nom.substring(0, 3) + userIdTicker);
         newUtilisateur.setNom(nom);
         newUtilisateur.setPrenom(prenom);
+        newUtilisateur.setPassword(password);
 
         return newUtilisateur;
     }

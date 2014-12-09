@@ -33,6 +33,7 @@ public class CreateUserUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         userInfoPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -42,6 +43,10 @@ public class CreateUserUI extends javax.swing.JFrame {
         addButton = new javax.swing.JButton();
         deleteButton1 = new javax.swing.JButton();
         niveauBox = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        passwordField = new javax.swing.JTextField();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +54,7 @@ public class CreateUserUI extends javax.swing.JFrame {
 
         jLabel3.setText("Nom :");
 
-        nom2Label.setText("Prénom :");
+        nom2Label.setText("Pr�nom :");
 
         nom2Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +89,8 @@ public class CreateUserUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Password : ");
+
         javax.swing.GroupLayout userInfoPanelLayout = new javax.swing.GroupLayout(userInfoPanel);
         userInfoPanel.setLayout(userInfoPanelLayout);
         userInfoPanelLayout.setHorizontalGroup(
@@ -93,16 +100,19 @@ public class CreateUserUI extends javax.swing.JFrame {
                 .addGroup(userInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
-                    .addComponent(nom2Label))
+                    .addComponent(nom2Label)
+                    .addComponent(jLabel4))
                 .addGap(54, 54, 54)
                 .addGroup(userInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(userInfoPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(deleteButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addButton))
                     .addComponent(nom2Field)
                     .addComponent(nomField)
-                    .addComponent(niveauBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(niveauBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(passwordField))
                 .addContainerGap())
         );
         userInfoPanelLayout.setVerticalGroup(
@@ -120,11 +130,15 @@ public class CreateUserUI extends javax.swing.JFrame {
                 .addGroup(userInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nom2Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nom2Label))
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
+                .addGroup(userInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(userInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteButton1)
                     .addComponent(addButton))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,7 +154,7 @@ public class CreateUserUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 212, Short.MAX_VALUE)
+            .addGap(0, 217, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -163,11 +177,12 @@ public class CreateUserUI extends javax.swing.JFrame {
         String niveau = niveauBox.getSelectedItem().toString();
         String nom = nomField.getText();
         String nom2 = nom2Field.getText();
+        String password = passwordField.getText();
         
         if (nom.length() < 3 || nom2.length() < 3) {
             JOptionPane.showMessageDialog(this, "Veuillez entrer un nom et un prénom valide");
         } else {
-            controller.ajouterUtilisateur(niveau, nom, nom2);
+            controller.ajouterUtilisateur(niveau, nom, nom2, password);
             this.dispose();
         }
     }//GEN-LAST:event_addButtonActionPerformed
@@ -184,12 +199,15 @@ public class CreateUserUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton deleteButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JComboBox niveauBox;
     private javax.swing.JTextField nom2Field;
     private javax.swing.JLabel nom2Label;
     private javax.swing.JTextField nomField;
+    private javax.swing.JTextField passwordField;
     private javax.swing.JPanel userInfoPanel;
     // End of variables declaration//GEN-END:variables
 }

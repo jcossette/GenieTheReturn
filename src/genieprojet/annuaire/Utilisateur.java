@@ -10,6 +10,7 @@ public abstract class Utilisateur implements Serializable{
     private String ID;
     private String nom;
     private String prenom;
+    private String password;
 
     public String getID() {
         return ID;
@@ -25,6 +26,14 @@ public abstract class Utilisateur implements Serializable{
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPrenom() {

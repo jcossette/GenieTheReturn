@@ -5,6 +5,7 @@
  */
 package genieprojet.gui;
 
+import genieprojet.controleurs.PortailControleur;
 import genieprojet.controleurs.VenteControleur;
 import genieprojet.vente.Catalogue;
 import genieprojet.vente.Registre;
@@ -15,11 +16,14 @@ import genieprojet.vente.Registre;
  */
 public class PortailUI extends javax.swing.JFrame {
 
+	PortailControleur portailController;
+	
     /**
      * Creates new form PortailUI
      */
     public PortailUI() {
         initComponents();
+        portailController = new PortailControleur(this);
     }
 
     /**
@@ -109,34 +113,51 @@ public class PortailUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
+    	portailController.authenticateVente();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    public void showVente(){
+    	this.setVisible(false);
         VenteUI venteUI = new VenteUI();
         venteUI.setVisible(true);
         VenteControleur controleur = new VenteControleur(Registre.getInstance(), Catalogue.getInstance(), venteUI);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
+        portailController.authenticateAnnuaire();
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    public void showAnnuaire(){
+    	this.setVisible(false);
         AnnuaireUI annuaire = new AnnuaireUI();
         annuaire.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
+    }
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.setVisible(false);
+        portailController.authenticateCatalogue();
+    }//GEN-LAST:event_jButton4ActionPerformed
+    
+    public void showCatalogue(){
+    	this.setVisible(false);
         CatalogueUI catalogue = new CatalogueUI();
         catalogue.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        this.setVisible(false);
+        portailController.authenticateUsers();
+    }//GEN-LAST:event_jButton5ActionPerformed
+    
+    public void showUsers(){
+    	this.setVisible(false);
         UsersUI annuaireUsers = new UsersUI();
         annuaireUsers.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

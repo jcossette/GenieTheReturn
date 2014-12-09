@@ -38,8 +38,8 @@ public class AnnuaireControleur extends Observable{
         notifier();
     }
 
-    public void ajouterUtilisateur(String niveau, String nom, String prenom) {
-        annuaire.ajouterUtilisateur(niveau, nom, prenom);
+    public void ajouterUtilisateur(String niveau, String nom, String prenom, String password) {
+        annuaire.ajouterUtilisateur(niveau, nom, prenom, password);
         saveAnnuaire();
         notifier();
     }
@@ -82,5 +82,9 @@ public class AnnuaireControleur extends Observable{
     
     public void saveAnnuaire() {
         DBManager.getInstance().saveAnnuaire(annuaire);
+    }
+    
+    public Utilisateur verifyUser(String userID, String password){
+    	return annuaire.verifyUser(userID, password);
     }
 }
