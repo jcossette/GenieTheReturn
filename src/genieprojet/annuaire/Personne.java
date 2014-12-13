@@ -6,10 +6,13 @@ public class Personne extends Client implements Serializable{
 
     private String prenom;
     private TrancheAge tranche;
+    
+    public Personne() {
+    	this("Jean", 25);
+    }
 
     public Personne(String prenom, int age) {
         this.prenom = prenom;
-
         setTrancheAge(age);
     }
 
@@ -24,6 +27,10 @@ public class Personne extends Client implements Serializable{
     }
 
     public void setTrancheAge(int age) {
+    	if (age < 1 || age > 150) {
+    		throw new IllegalArgumentException();
+    	}
+    	
         if (age < 18) {
             tranche = TrancheAge.ENFANT;
         } else if (age < 60) {
