@@ -10,7 +10,7 @@ public class FileLogger {
 		try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("methodCallLog.txt", true)))) {
 		    out.println(toPrint);
 		}catch (IOException e) {
-		    //exception handling left as an exercise for the reader
+		    System.out.println("Erreur d'ecriture du log");
 		}
 	}
 }
