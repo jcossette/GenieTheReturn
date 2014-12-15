@@ -165,4 +165,12 @@ public class Annuaire implements Serializable {
     	}
     	return null;
     }
+
+	public int getClientIdTicker() {
+		return clientIdTicker;
+	}
+
+	public int getUserIdTicker() {
+		return userIdTicker;
+	}
 }
