@@ -21,7 +21,7 @@ public class FabriqueClientTest {
 	@Test
 	public void test_CreerClientEntreprise(){
 		Client testClientEntreprise = creerClientEntreprise();
-		assertNotNull(creerClientEntreprise());
+		assertNotNull(testClientEntreprise);
 		assertEquals(Entreprise.class, testClientEntreprise.getClass());
 	}
 	
