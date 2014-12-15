@@ -19,7 +19,11 @@ public class Catalogue implements Serializable {
         IDticker = 1000000;
     }
 
-    public static Catalogue getInstance() {
+    public int getIDticker() {
+		return IDticker;
+	}
+
+	public static Catalogue getInstance() {
         if (instance != null) {
             return instance;
         }
@@ -79,4 +83,8 @@ public class Catalogue implements Serializable {
         }
         return results;
     }
+
+	public void setIDTicker(int i) {
+		IDticker = i;
+	}
 }
